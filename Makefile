@@ -21,4 +21,4 @@ restart:
 	$(COMPOSE) restart
 
 getadminkey:
-	$(DOCKER) exec jenkins-docker_jenkins_1 cat /var/jenkins_home/secrets/initialAdminPassword
+	$(DOCKER) exec $$(docker-compose ps -q jenkins) cat /var/jenkins_home/secrets/initialAdminPassword
