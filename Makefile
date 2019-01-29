@@ -6,7 +6,7 @@ DOCKER = docker
 default: run
 
 init:
-	./scripts/gen-ssl.sh
+	./scripts/init.sh
 
 run: build
 	$(COMPOSE) up -d
