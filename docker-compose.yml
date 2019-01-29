@@ -1,0 +1,12 @@
+version: '3'
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    ports:
+      - 8083:8083
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
+      - ./ssl:/var/lib/jenkins/ssl
+    environment:
+      - JENKINS_OPTS=--httpPort=-1 --httpsPort=8083 --httpsCertificate=/var/lib/jenkins/ssl/jenkins.cer --httpsPrivateKey=/var/lib/jenkins/ssl/jenkins.pem
+
